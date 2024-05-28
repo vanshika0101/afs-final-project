@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Candidates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/images/bg.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            /* Adjust the maximum width as needed */
+            margin: 0 auto;
+            /* Center the container horizontally */
+            margin-top: 3%;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="email"],
+        button[type="submit"] {
+            width: 100%;
+            background-color: #fff;
+            /* White background */
+            color: #000;
+            /* Black text color */
+            border: 1px solid #ccc;
+            /* Light gray border */
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            /* Include padding and border in width calculation */
+        }
+
+        input::placeholder {
+            color: #999;
+            /* Light gray placeholder text */
+        }
+
+        button[type="submit"] {
+            cursor: pointer;
+            background-color: #5849e0;
+            /* Custom color */
+            color: #fff;
+            /* White text color */
+            border: none;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+
+        .candidate {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .candidate img {
+            max-width: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .candidate-info {
+            flex-grow: 1;
+        }
+
+        .candidate-info h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        .candidate-info p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .form-group {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .form-group input {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        /* Add media query for responsiveness */
+        @media (max-width: 600px) {
+            .form-group {
+                flex-direction: column;
+            }
+        }
+
+        input[type="date"]::placeholder {
+            color: #aaa;
+        }
+
+        .form-group select {
+            flex: 1;
+            margin-right: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Style the disabled option */
+        .form-group select option:disabled {
+            color: #aaa;
+        }
+
+        .form-group>div {
+            flex: 1;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            /* Add vertical spacing between input elements */
+        }
+
+        /* Add media query for responsiveness */
+        @media (max-width: 600px) {
+            .form-group>div {
+                flex-basis: 100%;
+                /* On smaller screens, make each input take up full width */
+                margin-right: 0;
+                /* Remove horizontal spacing */
+            }
+        }
+
+        /* Style input elements */
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="date"],
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Style button */
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            cursor: pointer;
+            background-color: #5849e0;
+            color: #fff;
+        }
+
+        /* Add hover effect for button */
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* .form-group label {
+    display: block; /* Display the label as a block element */
+        /* margin-bottom: 5px; /* Add some space below the label */
+
+
+        .form-group input[type="file"] {
+            display: block;
+            /* Display the file input as a block element */
+            margin-top: 5px;
+            /* Add some space above the file input */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add New Candidate</h1>
+        <form action="/addcandidatessubmit" method="post"  onsubmit="return validateForm()">
+            <div class="form-group">
+                <div>
+                    <label for="full_name">Full Name:</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="Enter Your Full Name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email" required><br><br>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" placeholder="Enter Your Date Of Birth" required>
+                </div>
+                <div>
+                    <label for="nationality">Nationality:</label>
+                    <input type="text" id="nationality" name="nationality" placeholder="Indian" pattern="Indian"
+                        title="Only Indian nationality is allowed" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <label for="blood_group">Blood Group:</label>
+                    <select id="blood_group" name="blood_group" required>
+                        <option value="" selected disabled>Select Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                
+                <!-- <div>
+                    <label for="party_logo">Profile img:</label>
+                    <input type="file" id="profile_img" name="profile_img" accept="image/*" required>
+                </div>
+            </div> -->
+
+            <button type="submit">Add Candidate</button>
+        </form>
+        <hr>
+
+        <script>
+            function validateForm() {
+                const fullName = document.getElementById('full_name').value;
+                const dob = document.getElementById('dob').value;
+                const nationality = document.getElementById('nationality').value;
+
+                if (nationality.toLowerCase() !== 'indian') {
+                    alert('Only Indian nationality is allowed.');
+                    return false;
+                }
+
+                var today = new Date();
+                var birthDate = new Date(dob);
+                var age = today.getFullYear() - birthDate.getFullYear();
+                var m = today.getMonth() - birthDate.getMonth();
+                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                if (age < 18) {
+                    alert("You must be at least 18 years old to register as a Candidate.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Inventory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1{
+            text-align: center;
+            color: rgb(158, 11, 11);
+            
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            box-shadow: 0 2px 4px rgb(6, 183, 183);
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blood Inventory</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Blood Type</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let bloodType in bloodInventory) { %>
+                <tr>
+                    <td><%= bloodType %></td>
+                    <td><%= bloodInventory[bloodType] %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DonarDrive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.container ul li a{
+  color: black;
+}
+
+/* Navbar */
+nav {
+    background-color: white;
+    color: black;
+    padding: 20px 0;
+    position: fixed;
+    margin-top: 50px;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+nav a{
+  color: black;
+}
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 30px;
+    color:black;
+    margin-left: -10%;
+  font-weight: 300;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+nav .nav-links {
+    list-style-type: none;
+
+}
+.nav-links{
+  margin-left: 40%;
+}
+nav .nav-links li {
+    display: inline;
+    margin-right: 20px;
+    color: black;
+}
+
+
+nav .nav-links li:last-child {
+    margin-right: 0;
+}
+
+nav .nav-links li a {
+  color: black;;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 300;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+nav .nav-links li a:hover{
+  background-color: rgb(201, 14, 14);
+  color: white;
+}
+
+/* Header Section */
+header {
+    position: relative; /* Relative positioning for absolute positioning within */
+}
+/* Keyframes for Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply Animation to Heading */
+.header-content h1 {
+    animation: fadeIn 7s ease;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.header-image {
+    position: absolute;
+    top: 4px;
+    left: 1.37%;
+    bottom:4px;
+    width: 500px; 
+    height: 600px; 
+    z-index: -1; /* Places the image behind other content */
+    opacity: 0.6; /* Adjust the opacity to blend with the background */
+}
+.header-content {
+    margin-left:55%;
+    padding-top: 150px; /* Adjust as needed to position content below the image */
+    color:  black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+header p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease;
+}
+
+.btnlearnmore {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    animation: fadeInUp 1s ease;
+}
+
+.btnlearnmore:hover {
+    background-color:#6558d3;
+}
+
+/* Footer Section */
+footer {
+    background-color:black;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow flex items to wrap */
+}
+
+.footer-link, .contact-info, .follow-us {
+    margin-right: 39px; /* Add margin between links and paragraphs */
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff; /* White text color */
+}
+
+.footer-link:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+.contact-info, .follow-us {
+    margin-top: 8px; /* Add margin between paragraphs */
+}
+
+.contact-info a, .follow-us a {
+    color: #fff; /* White text color for links */
+}
+
+.contact-info a:hover, .follow-us a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+.footer {
+  position: absolute;
+  top: 360%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1550px;
+  width: 100%;
+  background:black;
+  /* border-radius: 3px; */
+}
+.footer .footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3.5rem;
+  padding: 60px;
+}
+.footer-row .footer-col h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.footer-col .links {
+  margin-top: 20px;
+}
+.footer-col .links li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.footer-col .links li a {
+  text-decoration: none;
+  color: #bfbfbf;
+}
+.footer-col .links li a:hover {
+  color: #fff;
+}
+.footer-col p {
+  margin: 20px 0;
+  color: #bfbfbf;
+  max-width: 300px;
+}
+.footer-col form {
+  display: flex;
+  gap: 5px;
+}
+.footer-col input {
+  height: 40px;
+  border-radius: 6px;
+  background: none;
+  width: 100%;
+  outline: none;
+  border: 1px solid #7489C6 ;
+  caret-color: #fff;
+  color: #fff;
+  padding-left: 10px;
+}
+.footer-col input::placeholder {
+  color: #ccc;
+}
+ .footer-col form button {
+  background: #fff;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.footer-col form button:hover {
+  background: #cecccc;
+}
+.footer-col .icons {
+  display: flex;
+  margin-top: 98%;
+  gap: 30px;
+  cursor: pointer;
+}
+.footer-col .icons i {
+  color: #afb6c7;
+  font-size: 24px; /* Adjust the font size as needed */
+}
+.footer-col .icons i:hover  {
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    border-radius: 0;
+  }
+  .footer .footer-row {
+    padding: 20px;
+    gap: 1rem;
+  }
+  .footer-col form {
+    display: block;
+  }
+  .footer-col form :where(input, button) {
+    width: 100%;
+  }
+  .footer-col form button {
+    margin: 10px 0 0 0;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap");
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+ :root {
+  /* // Basic */ 
+  --c-white: #fff;
+  --c-black: #000;
+
+  /* // Greys */
+  --c-ash: #eaeef6;
+  --c-charcoal: #a0a0a0;
+  --c-void: #141b22;
+/* 
+  // Beige/Browns */
+  --c-fair-pink: #FFEDEC;
+  --c-apricot: #FBC8BE;
+  --c-coffee: #754D42;
+  --c-del-rio: #917072;
+
+  /* // Greens */
+  --c-java: #1FCAC5;
+
+  /* // Purples */
+  --c-titan-white: #f1eeff;
+  --c-cold-purple: #a69fd6;
+
+}
+.main-body{
+  margin-top: 9%;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 90%;
+  max-width: 1000px;
+  margin: 10vh auto;
+}
+
+.card {
+  border-radius: 16px;
+  box-shadow: 0 30px 30px -25px rgba(#4133B7, .25);
+  max-width: 300px;
+}
+
+/* CSS for the article with class "information" */
+.information {
+    background-color: #f4f4f4; /* Change background color */
+    padding: 20px; /* Add padding */
+    border-radius: 20px; /* Add border radius for rounded corners */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+/* CSS for the heading inside the article */
+.information h2 {
+    color: black; /* Change heading color */
+    font-size: 28px; /* Adjust heading font size */
+    margin-bottom: 5px; /* Add margin bottom to create space between heading and list */
+}
+
+/* CSS for the list items inside the article */
+.information ul {
+    list-style-type: none; /* Remove default list style */
+    padding-left: 20px; /* Add padding-left to create space for custom bullet points */
+}
+
+.information ul li {
+    color:black; /* Change list item color */
+    font-size: 20px; /* Adjust list item font size */
+    margin-bottom: 10px; /* Add margin bottom to create space between list items */
+    position: relative; /* Position relative for pseudo-element positioning */
+}
+
+/* CSS for custom bullet points */
+.information ul li::before {
+    content: "\2022"; /* Unicode character for bullet point */
+    color: black; /* Bullet point color */
+    font-size: 20px; /* Adjust bullet point size */
+    position: absolute; /* Position absolute for precise placement */
+    left: -20px; /* Adjust position to align with list items */
+    top: 50%; /* Adjust position to vertically center bullet point */
+    transform: translateY(-50%); /* Adjust position to vertically center bullet point */
+}
+
+  .info {
+    color: var(--c-charcoal);
+    & + * {
+      margin-top: 1.25rem;
+    }
+  }
+
+  .button {
+    font: inherit;
+    line-height: 1;
+    background-color: var(--c-white);
+    border: 2px solid var(--c-indigo);
+    color: var(--c-indigo);
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    &:hover,
+    &:focus {
+      background-color: var(--c-indigo);
+      color: var(--c-white);
+    }
+  }
+  
+  .details {
+    display: flex;
+    gap: 1rem;
+    div {
+      padding: .75em 1em;
+      background-color: var(--c-titan-white);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: .125em;
+      flex-basis: 50%;
+    }
+    
+    dt {
+      font-size: .875rem;
+      color: var(--c-cold-purple);
+    }
+    
+    dd {
+      color: var(--c-indigo);
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+  }
+
+
+
+.plan {
+  padding: 10px;
+  background-color: var(--c-white);
+  color: var(--c-del-rio);
+  
+  strong {
+    font-weight: 600;
+    color: var(--c-coffee);
+  }
+  
+  .inner {
+    padding: 20px;
+    padding-top: 40px;
+    background-color: var(--c-fair-pink);
+    border-radius: 12px;
+  position: relative;
+    overflow: hidden;
+  }
+  
+  .pricing {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--c-apricot);
+    border-radius: 99em 0 0 99em;
+    display: flex;
+    align-items: center;
+    padding: .625em .75em;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--c-coffee);
+    small {
+      color: var(--c-del-rio);
+      font-size: .75em;
+      margin-left: .25em;
+    }
+    
+  }
+  
+  .title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--c-coffee);
+    & + * {
+      margin-top: .75rem;
+    }
+  }
+  
+  .info {
+    & + * {
+      margin-top: 1rem;
+    }
+  }
+  
+  .features {
+    display: flex;
+    flex-direction: column;
+    li {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      & + * {
+        margin-top: .75rem;
+      }
+    }
+    
+    .icon {
+      background-color: var(--c-java);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-white);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+    
+    & + * {
+      margin-top: 1.25rem;
+    }
+  }
+  
+  button {
+    font: inherit;
+    background-color: var(--c-indigo);
+    border-radius: 6px;
+    color: var(--c-white);
+    font-weight: 500;
+    font-size: 1.125rem;
+    width: 100%;
+    border: 0;
+    padding: 1em;
+    &:hover,
+    &:focus {
+      background-color: var(--c-governor);
+    }
+  }
+  
+  
+}
+/* CSS for the blog section */
+.blog {
+    padding: 50px 0; /* Add padding */
+    background-color: #f4f4f4; /* Set background color */
+}
+
+.blog h2 {
+    color: black; /* Set heading color */
+    font-size: 28px; /* Set heading font size */
+    text-align: center; /* Center align heading */
+    margin-bottom: 30px; /* Add margin bottom */
+}
+
+.blog p {
+   
+    color: #333; /* Set paragraph text color */
+    font-size: 20px; /* Set paragraph font size */
+    line-height: 1.6; /* Set line height */
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Add gap between cards */
+}
+
+/* CSS for individual blog cards */
+.blog .card {
+    background-color: #fff; /* Set card background color */
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    padding: 20px; /* Add padding */
+    max-width: 300px; /* Set maximum width */
+}
+
+.blog .card img {
+    width: 100%; /* Make image responsive */
+    border-radius: 10px; /* Add border radius to image */
+    margin-bottom: 20px; /* Add margin bottom */
+}
+
+.blog .card h2 {
+    color: black; /* Set heading color */
+    font-size: 20px; /* Set heading font size */
+    margin-bottom: 15px; /* Add margin bottom */
+}
+
+.blog .card p {
+    color: #333; /* Set paragraph text color */
+    font-size: 18px; /* Set paragraph font size */
+    line-height: 1.8; /* Set line height */
+}
+
+
+
+* {
+    box-sizing: border-box;
+    font-family: Tahoma, Arial;
+    padding: 0px;
+    margin: 0px;
+}
+
+.slider-container {
+    width: 1500px;
+    margin: auto;
+    position: relative;
+   padding-top: 8%;
+}
+
+.slider-container .fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+.slider-container .slides .slider-numbers {
+    position: absolute;
+    padding: 15px;
+    font-size: 15px;
+    color: #FFF
+}
+
+.slider-container .slides .slider-caption {
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    color: #FFF;
+    padding: 10px;
+}
+
+.slider-container .prev,
+.slider-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFF;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.slider-container .next {
+    right: 0px;
+}
+
+.slider-container .prev:hover{
+    background: rgba(0, 0, 0, 0.6);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    cursor: pointer;
+}
+.slider-container .next:hover {
+    background: rgba(0, 0, 0, 0.6);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    cursor: pointer;
+}
+
+.slider-container .slider-bullets {
+    text-align: center;
+}
+
+.slider-container .slider-bullets .dots {
+    display: inline-block;
+    padding: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #808080;
+    border-radius: 50%;
+}
+
+.slider-container .slider-bullets .dots:hover {
+    background-color: #383838;
+    cursor: pointer;
+}
+
+.slider-container .slider-bullets .active {
+    background-color: #383838;
+}
+.slider-container .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image covers the entire container */
+}
+
+    </style>
+
+<body>
+    <section class="caution">
+        <p style="background-color: #b91816; color:white; text-align: center; padding: 10px; margin: 0; font-size: 16px; position: fixed;">Caution:  We never charge for blood donations. Don't pay for blood; it's a selfless act.         Save lives without cost. If anyone asks for money to donate blood, please do not encourage it We never charge for blood donations. Don't pay for blood; it's a selfless act.         Save lives without cost. If anyone asks for money to donate blood, please do not encourage it</p>
+    </section>
+    <nav>
+        <div class="container">
+            <div class="logo">DonarDrive</div>
+            <ul class="nav-links">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/about">Know About Us</a></li>
+                <li><a href="#blog">blog</a></li>
+                <li><a href="/contactus">Help</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <!-- <div class="header-image">
+            <img src="/images/img.jpg" height="500px" width="750px" style="border-radius: 6%;margin-top: 23%;">
+        </div>
+        <div class="header-content">
+            <h1>Welcome to DonarDrive</h1>
+            <img src="/images/img3.png " height="260px" width="260px" style="margin-left: 25%;margin-top:-1%;border-radius: 50%;">
+            <p style="text-align: center;">A Secure and Reliable E-Voting System</p>
+            <a href="/about" class="btnlearnmore" style="margin-left:35%;margin-top:-5%;">Learn More</a>
+            // <img src="/images/wave.png " height="260px" width="1520px" style="margin-left:-123%; margin-top:-16%;"> -->
+            <div class="slider-container">
+
+              <div class="slides fade">
+                  <div class="slider-numbers"></div>
+                  <div class="slider-image"><img src="/images/sliderimg1.png" alt="background_1"></div>
+                  <div class="slider-caption"></div>
+              </div> <!-- slider -->
+          
+              <div class="slides fade">
+                  <div class="slider-numbers"></div>
+                  <div class="slider-image"><img src="/images/sliderimg2.png"  alt="background_2"></div>
+                  <div class="slider-caption"></div>
+              </div> <!-- slider -->
+          
+              <div class="slides fade">
+                  <div class="slider-numbers"></div>
+                  <div class="slider-image"><img src="/images/sliderimg3.png"  alt="background_3"></div>
+                  <div class="slider-caption"></div>
+              </div> <!-- slider -->
+          
+              
+          
+              <!-- Slider Next and Previous buttons -->
+              <a class="prev" onclick="plusIndex(-1)">❮</a>
+              <a class="next" onclick="plusIndex(+1)">❯</a>
+          
+              <!-- Slider Selection Bullets -->
+              <div class="slider-bullets" id="slider-bullets">
+                  <span class="dots" onclick="currentSlide(1)"></span>
+                  <span class="dots" onclick="currentSlide(2)"></span>
+                  <span class="dots" onclick="currentSlide(3)"></span>
+                 
+              </div> <!-- Slider Bullets -->
+          
+          </div>
+    </header>
+   <section class="main-body" id="main-body">
+      <div class="cards">
+        <article class="information [ card ]">
+            <h2>The Day Before</h2>
+
+            <ul>
+              <li>Have an iron-rich diet such as beans, spinach or meat, poultry.</li>
+              <li>Have a proper sleep of at least 8 hours</li>
+              <li>Include more liquids in your diet</li>
+            </ul>  
+           
+         
+        </article>
+        <article class="information [ card ]">
+         
+      
+            <span class="pricing">
+              <span>
+                <small></small>
+              </span>
+            </span>
+            <h2>On the Day </h2>
+
+            <ul>
+              <li>Do carry your identify identification forms e.g. driver’s license</li>
+              <li>Drink 2 cups of water before donating blood </li>
+              <li>Wear a half sleeve shirt so that you can easily roll it up avoid fast food before donation</li>
+            </ul>  
+        </article>
+        <article class="information [ card ]">
+            <h2>After Donation</h2>
+
+            <ul>
+              <li>Reward yourself with a snack as refreshment immediately. </li>
+              <li>Drink more liquids over a period of 24 hours  </li>
+              <li>Don’t do vigorous workout &amp; give your body rest</li>
+            </ul>  
+        </article>
+      </div>
+   </section>
+
+   <section class="blog" id="blog">
+    <h2>BLOG</h2>
+    <span>
+        <p>
+            DonarDrive offers a platform to connect volunteering blood donors and recipients. Blood donation has been prevalent for ages, however it is always a challenge to find the right donor at the right time. Blood donation through the years has become easier. For us to succeed in this noble effort of saving lives we are guided by multiple doctors and academics who are experts in the blood donation segment. Their passion and responsibility towards saving lives are depicted in these blogs below.
+        </p>
+    </span>
+    <div class="cards">
+      <article class="blog [ card ]">
+        <img src="/images/blog1.png">
+        <h2>Benifits of Blood Donation </h2>
+
+        <p>
+           If you are thinking, "What good would it do to donate my blood!", then keep reading. Many people hesitate to donate blood, thinking it is a tedious process and that they'd faint after that. First, let’s bust the myths about donating blood. These are the reasons why potential and existing... 
+        </p>
+     </article>
+       
+      </article>
+      <article class="blog [ card ]">
+       
+    
+          <span class="pricing">
+            <span>
+              <small></small>
+            </span>
+          </span>
+          <img src="/images/blog2.png">
+          <h2>A Mighty Challenge Blood Crisis in Corona Times</h2>
+
+         <p>
+           
+
+            <p>
+               If you are thinking, "What good would it do to donate my blood!", then keep reading. Many people hesitate to donate blood, thinking it is a tedious process and that they'd faint after that. First, let’s bust the myths about donating blood. These are the reasons why potential and existing... 
+            </p>
+         </article>
+         </p>
+      </article>
+      <article class="blog [ card ]">
+        <img src="/images/blog3.png">
+          <h2>How can Technology help to reduce blood crisis in hard times?</h2>
+
+        <p>
+            Saving lives by donating blood sometimes feels over-exaggeration, and India remains the world's most substantial shortage of blood, with all states together battling an enormous shortfall of 41 million units and demand... 
+        </p>
+      </article>
+    </div>
+ </section>
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="footer-row">
+          <div class="footer-col">
+            <h4>Info</h4>
+            <ul class="links">
+              <li><a href="/about"><strong>About Us</strong></a></li>
+              <li><a href="#">Compressions</a></li>
+              <li><a href="#">Customers</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">Collection</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul class="links">
+              <li><a href="/howtodonateblood"><strong>How to Donate Blood</strong> </a></li>
+              <li><a href="#">Latest Designs</a></li>
+              <li><a href="#">Themes</a></li>
+              <li><a href="#">Popular Designs</a></li>
+              <li><a href="#">Art Skills</a></li>
+              <li><a href="#">New Uploads</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="links">
+              <li><a href="/contactus"><strong>Help</strong></a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">GDPR</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Media Kit</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <!-- <h4>Newsletter</h4>
+            <p>
+              Subscribe to our newsletter for a weekly dose
+              of news, updates, helpful tips, and
+              exclusive offers.
+            </p>
+            <form action="#">
+              <input type="text" placeholder="Your email" required>
+              <button type="submit">SUBSCRIBE</button>
+            </form> -->
+             <div class="icons">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-github"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        var slideIndex = 1;
+
+function showImage(n) { // for Display the first Image
+    
+    'use strict';
+    
+    var slide = document.getElementsByClassName('slides'),
+        
+        dots = document.getElementsByClassName('dots'),
+        
+        i;
+    
+    if (n > slide.length) { // to prevent larger values than the slide length
+        
+        slideIndex = 1;
+    }
+    
+    if (n < 1) { // to avoide negative values
+        
+        slideIndex = slide.length;
+    }
+    
+    for (i = 0; i < slide.length; i++) { // to make other images dispaly: none
+        
+        slide[i].style.display = 'none';
+    }
+    slide[slideIndex - 1].style.display = 'block';
+    
+    for (i = 0; i < dots.length; i++) { // to remove the active class from other dots
+        
+        dots[i].className = dots[i].className.replace(' active', '');
+    }
+    
+    dots[slideIndex - 1].className += ' active';
+}
+
+showImage(slideIndex);
+
+function plusIndex(n) { // for Next & Prev Actions
+    
+    'use strict';
+    
+    showImage(slideIndex += n);
+}
+
+function currentSlide(n) { // for Slide Bullets Selection
+    
+    'use strict';
+    
+    showImage(slideIndex = n);
+}
+      </script>
+
+</body>
+
+</html>
