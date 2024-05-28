@@ -1,3 +1,4 @@
+const dotenv=require("dotenv").config();
 const express = require('express');
 const session = require('express-session');
 const multer = require('multer');
@@ -17,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
@@ -181,9 +182,11 @@ app.get('/verifyemail', function (req, res) {
     
         // Respond with a simple success message for demonstration purposes
         res.send(`<h1>Thank you for your message, ${name}!</h1><p>We'll get back to you soon.</p>`);
-    app.get('/help'), (req, res) => {
+    
+    
+    });
+    app.get('/help', (req, res) => {
         res.render('help');
-    };
     });
 
     app.get('/candidates', (req, res) => {
