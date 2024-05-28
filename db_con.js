@@ -1,12 +1,15 @@
 var mysql = require('mysql');
-var conn = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "password",
-    database: "DonarDrive"
+const pool = mysql.createPool({
+    port: process.env.DB_PORT || 3306,
+    host:  'localhost',
+    user:'root',
+    password: 'password',
+    database: 'DonarDrive',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0,
+}).on("error", (err) => {
+    console.log("Failed to connect to Database - ", err);
 });
-conn.connect(function (err) {
-    if (err)
-        throw err;
-});
-module.exports = conn;
+
+module.exports = pool;
