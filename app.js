@@ -5,8 +5,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 const db = require('./db_con.js');
-const { generateOTP } = require('./utils.js');
-const { sendOTPEmail, sendVerifyMail,verifyOTP} = require('./mailSend.js');
+
 app.use(session({
     secret: 'test123!@#',
     resave: false,
@@ -159,33 +158,33 @@ app.get('/verifyemail', function (req, res) {
     });
 });
 
-    // app.get('/howtodonateblood', (req, res) => {
-    //     res.render('howtodonateblood');
-    // });
-    // app.get('/about', (req, res) => {
-    //     res.render('about');
-    // });
-    // app.get('/logout', function (req, res) {
-    //     //req.session.userid = "";
-    //     res.redirect('/');
-    // });
-    // app.get('/contactus', (req, res) => {
-    //     res.render('contactus');
-    // });
-    // app.post('/submit_contact', (req, res) => {
-    //     // Extract data from the form submission
-    //     const name = req.body.name;
-    //     const email = req.body.email;
-    //     const message = req.body.message;
+    app.get('/howtodonateblood', (req, res) => {
+        res.render('howtodonateblood');
+    });
+    app.get('/about', (req, res) => {
+        res.render('about');
+    });
+    app.get('/logout', function (req, res) {
+        //req.session.userid = "";
+        res.redirect('/');
+    });
+    app.get('/contactus', (req, res) => {
+        res.render('contactus');
+    });
+    app.post('/submit_contact', (req, res) => {
+        // Extract data from the form submission
+        const name = req.body.name;
+        const email = req.body.email;
+        const message = req.body.message;
     
-    //     // Here you can handle the form submission data (e.g., send an email, save to database, etc.)
+        // Here you can handle the form submission data (e.g., send an email, save to database, etc.)
     
-    //     // Respond with a simple success message for demonstration purposes
-    //     res.send(`<h1>Thank you for your message, ${name}!</h1><p>We'll get back to you soon.</p>`);
-    // app.get('/help'), (req, res) => {
-    //     res.render('help');
-    // };
-
+        // Respond with a simple success message for demonstration purposes
+        res.send(`<h1>Thank you for your message, ${name}!</h1><p>We'll get back to you soon.</p>`);
+    app.get('/help'), (req, res) => {
+        res.render('help');
+    };
+    });
 
     app.get('/candidates', (req, res) => {
         // Retrieve the list of candidates from the database
